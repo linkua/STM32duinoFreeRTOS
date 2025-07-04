@@ -1,0 +1,27 @@
+{
+  "name": "STM32duino_FreeRTOS",
+  "version": "10.3.1",
+  "keywords": "Arduino, STM32, RTOS",
+  "description": "FreeRTOS for STM32F1xx",
+  "build": {
+    "includeDir": ".",
+    "flags": [
+      "-I Source/include",
+      "-I Source/CMSIS_RTOS_V2",
+      "-I Source/portable/GCC/ARM_CM3"
+    ],
+    "srcDir": "Source",
+    "srcFilter": "+<*> -<examples> -<test>"
+  },
+  "authors":
+  [
+    {
+        "name": "link",
+        "email": "11lhlie@sina.com",
+        "maintainer": true
+    }
+  ],
+  "frameworks": "arduino",
+  "platforms": "ststm32",
+  "headers": "FreeRTOS.h"
+}
