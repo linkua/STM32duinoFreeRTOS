@@ -1,8 +1,16 @@
-`USE_NEWLIB_REENTRANT`（或在 `FreeRTOSConfig.h` 中叫 `configUSE_NEWLIB_REENTRANT`）是一个和 **FreeRTOS + newlib 标准 C 库** 集成相关的重要配置项，确实需要谨慎使用。
+## 堆大小 
+#define configMINIMAL_STACK_SIZE     ((uint16_t)256)   // 1 KB 栈 (words x 4bytes)
+#define configTOTAL_HEAP_SIZE        ((size_t)(10 * 1024))  // 10 KB Heap
+
+## 默认用 heap_4.c 
+动态合并相邻空闲块，减少碎片
+推荐大多数动态任务/队列/定时器创建场景
+## 默认开启 configUSE_NEWLIB_REENTRANT
 
 ---
 
 ## 🧠 什么是 `USE_NEWLIB_REENTRANT`？
+`USE_NEWLIB_REENTRANT`（或在 `FreeRTOSConfig.h` 中叫 `configUSE_NEWLIB_REENTRANT`）是一个和 **FreeRTOS + newlib 标准 C 库** 集成相关的重要配置项，确实需要谨慎使用。
 
 ### 简单说：
 
